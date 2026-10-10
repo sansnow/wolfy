@@ -55,10 +55,10 @@ const App = () => {
           </div>
 
           <div className="nav-elem">
-            <i class="ri-arrow-right-s-line" ></i>
+            <i className="ri-arrow-right-s-line" ></i>
             Our Showreel</div>
           <div className="nav-elem" >
-            <i class="ri-menu-3-line"></i>
+            <i className="ri-menu-3-line"></i>
           </div>
 
         </nav>
@@ -133,7 +133,9 @@ const App = () => {
         </div>
 
       </section>
-      <section id='section-3'></section>
+      <section id='section-3'>
+  
+      </section>
     </main>
   );
 };

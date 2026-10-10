@@ -137,7 +137,7 @@ section {
     display: flex;
     flex-direction: column;
     padding-left: 17rem;
-    padding-block: 10rem;
+    margin-block: 10rem;
 
 
     .title {
@@ -149,7 +149,7 @@ section {
       transition: all 0.3s linear;
 
       h1 {
-        font-size: 5rem;
+        font-size: 4rem;
         font-weight: 100;
         line-height: 1;
       }
