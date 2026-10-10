@@ -213,25 +213,11 @@ const Dog = () => {
                 }
             })
         });
-
-        // document.querySelector('.title[img-title="navy-pier"]').addEventListener("mouseenter", () => {
-
-        //     material.current.uMatcap1.value = mat8;
-
-        //     gsap.to(material.current.uProgress, {
-        //         value: -1.0,
-        //         duration: 0.4,
-        //         onComplete: () => {
-        //             material.current.uMatcap2.value = material.current.uMatcap1.value;
-        //             material.current.uProgress.value = 1.0
-        //         }
-        //     })
-        // });
     }, []);
 
     return (
         <>
-            <primitive object={model.scene} position={[0.25, -0.55, 0]} rotation={[0, Math.PI / 3.9, 0]} />
+            <primitive object={model.scene} position={[0.25, -0.5, 0]} rotation={[0, Math.PI / 3.9, 0]} />
             <directionalLight position={[0, 5, 5]} color={0xFFFFFF} intensity={10} />
         </>
     )

@@ -26,6 +26,7 @@ const App = () => {
           top: 0,
           left: 0,
           zIndex: 1,
+          scale: 1,
         }}>
         <Dog></Dog>
 
@@ -85,6 +86,7 @@ const App = () => {
             <p>
               Dogstudio is a multidisciplinary <br /> creative studio at the intersection <br /> of art, design and technology.
             </p>
+            <span>Our goal is to deliver amazing experiences that make <br /> people talk, and build strategic value for brands, tech, <br /> entertainment, arts & culture.</span>
           </div>
         </div>
 
@@ -148,19 +150,38 @@ const App = () => {
           <div className="right"></div>
 
         </div>
-      
+
       </section>
 
       <section id="section-4">
-          <div className="bottom">
+        <div className="bottom">
           <div className="left"></div>
           <div className="right">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, quos iste modi nulla expedita incidunt itaque eligendi aliquam, ab nobis distinctio iusto eum totam cupiditate adipisci nemo! Omnis dolorum totam laborum itaque. Dolores corporis voluptates libero inventore vero iure dolorum nulla. Inventore voluptatibus illum quasi exercitationem, quibusdam accusamus? Possimus, architecto.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, quos iste modi nulla expedita incidunt itaque eligendi aliquam, ab nobis distinctio iusto eum totam cupiditate adipisci nemo! Omnis dolorum totam laborum itaque. Dolores corporis voluptates libero inventore vero iure dolorum nulla. Inventore voluptatibus illum quasi exercitationem, quibusdam accusamus? Possimus, architecto.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, quos iste modi nulla expedita incidunt itaque eligendi aliquam, ab nobis distinctio iusto eum totam cupiditate adipisci nemo! Omnis dolorum totam laborum itaque. Dolores corporis voluptates libero inventore vero iure dolorum nulla. </p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, quos iste modi nulla expedita incidunt itaque eligendi aliquam, ab nobis distinctio iusto eum totam cupiditate adipisci nemo! Omnis dolorum totam laborum itaque. Dolores corporis voluptates libero inventore vero iure dolorum nulla.</p>
           </div>
         </div>
       </section>
 
+      <footer>
+        <div className="top">
+          
+          We <br />
+          Make <br />
+          Good <br />
+          Shit
+        </div>
+        <div className="bottom">
+          <div className="left">
+            <h3>Chicago</h3>
+            <h3>Amsterdam</h3>
+            <h3>Paris.</h3>
+          </div>
+          <div className="right">
+            Fb / Ins / Dr / Tw
+          </div>
+        </div>
+      </footer>
 
     </main>
   );
