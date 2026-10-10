@@ -25,6 +25,7 @@ const App = () => {
           position: "fixed",
           top: 0,
           left: 0,
+          zIndex: 1,
         }}>
         <Dog></Dog>
 
@@ -134,8 +135,33 @@ const App = () => {
 
       </section>
       <section id='section-3'>
-  
+        <div className="top">
+          <div className="left">
+            <h3>
+              We're crafting <br />
+              emotional <br />
+              experiences aimed <br />
+              at improving <br />
+              results
+            </h3>
+          </div>
+          <div className="right"></div>
+
+        </div>
+      
       </section>
+
+      <section id="section-4">
+          <div className="bottom">
+          <div className="left"></div>
+          <div className="right">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, quos iste modi nulla expedita incidunt itaque eligendi aliquam, ab nobis distinctio iusto eum totam cupiditate adipisci nemo! Omnis dolorum totam laborum itaque. Dolores corporis voluptates libero inventore vero iure dolorum nulla. Inventore voluptatibus illum quasi exercitationem, quibusdam accusamus? Possimus, architecto.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, quos iste modi nulla expedita incidunt itaque eligendi aliquam, ab nobis distinctio iusto eum totam cupiditate adipisci nemo! Omnis dolorum totam laborum itaque. Dolores corporis voluptates libero inventore vero iure dolorum nulla. Inventore voluptatibus illum quasi exercitationem, quibusdam accusamus? Possimus, architecto.</p>
+          </div>
+        </div>
+      </section>
+
+
     </main>
   );
 };
