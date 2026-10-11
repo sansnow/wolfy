@@ -24,6 +24,7 @@ section {
   z-index: 2;
 }
 
+
 #canvas-elem::after {
   content: "";
   height: 100%;
@@ -40,13 +41,17 @@ section {
 
 #section-1 {
 
+
   --gap: 5rem;
 
   nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5rem 2.5rem;
+    padding: 1rem 2rem;
+    background-color: black;
+    position: relative;
+    z-index: 100;
 
     .nav-elem:nth-child(2) {
       i {
@@ -61,11 +66,196 @@ section {
 
     svg {
       max-width: 5rem;
-
       width: 100%;
       height: 100%;
     }
+
+
+    .menu-toggle {
+      display: none;
+    }
+
+    .showreel-container {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+
+      .showreel-bg {
+        position: absolute;
+        inset: 0;
+        background-color: black;
+        opacity: 0.5;
+        z-index: 0;
+      }
+
+      .showreel-content {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        color: white;
+      }
+
+      h2 {
+        margin: 0;
+        text-align: center;
+      }
+
+      video {
+        width: 50vw;
+        aspect-ratio: 16 / 9;
+        border-radius: 30px;
+      }
+    }
+
+    .display-none-kardo {
+      display: none;
+    }
+
+    .menu-button {
+      position: relative;
+      z-index: 102;
+      font-size: 1.8rem;
+      color: white;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .menu-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.65);
+      opacity: 0;
+      visibility: hidden;
+      transition:
+        opacity 0.4s ease,
+        visibility 0.4s ease;
+      z-index: 100;
+      cursor: pointer;
+    }
+
+    .side-menu {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: min(450px, 85vw);
+      height: 100vh;
+      height: 100dvh;
+      box-sizing: border-box;
+      padding: 2rem;
+
+      background: #171717;
+      color: white;
+
+      font-family: 'Times New Roman', Times, serif;
+
+      display: flex;
+      flex-direction: column;
+
+      transform: translateX(100%);
+      transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+
+      z-index: 101;
+
+      .menu-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 1.5rem;
+        border-bottom: 1px solid #444;
+        font-size: 0.75rem;
+        letter-spacing: 2px;
+      }
+
+      .close-button {
+        cursor: pointer;
+        font-size: 1.8rem;
+        line-height: 1;
+        color: white;
+      }
+
+      .menu-links {
+        display: flex;
+        flex-direction: column;
+        margin-top: 2.5rem;
+
+        a {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 1.2rem 0;
+
+          color: white;
+          text-decoration: none;
+          font-size: clamp(1.8rem, 5vw, 2.6rem);
+
+          border-bottom: 1px solid #333;
+          transition: padding 0.3s ease;
+
+          span {
+            font-size: 0.75rem;
+            color: #888;
+          }
+
+          &:hover {
+            padding-left: 0.75rem;
+          }
+        }
+      }
+
+      .menu-footer {
+        margin-top: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        border-top: 1px solid #444;
+        padding-top: 1.5rem;
+
+        span {
+          font-size: 0.7rem;
+          color: #999;
+          letter-spacing: 2px;
+        }
+
+        a {
+          color: white;
+          text-decoration: none;
+        }
+      }
+    }
+
+    .menu-toggle:checked~.menu-overlay {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .menu-toggle:checked~.side-menu {
+      transform: translateX(0);
+    }
   }
+
+  @media (max-width: 600px) {
+    nav {
+      padding: 1rem;
+
+      .side-menu {
+        padding: 1.5rem;
+      }
+
+      .showreel {
+        font-size: 0.85rem;
+      }
+    }
+  }
+
 
   .middle {
     display: flex;
@@ -375,4 +565,17 @@ footer {
       word-spacing: .51rem;
     }
   }
+}
+
+
+
+
+
+
+
+
+
+.display-none-kardo {
+  display: none;
+  opacity: 0;
 }

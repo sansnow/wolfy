@@ -1,8 +1,21 @@
 import Dog from './Components/Dog'
 import "./App.css"
 import { Canvas } from '@react-three/fiber'
+import { useEffect, useRef, useState } from 'react';
 
 const App = () => {
+
+
+  const [showreelOpen, setShowreelOpen] = useState(false);
+  const videoRef = useRef(null);
+
+  const enableShowreel = () => setShowreelOpen(true);
+
+  const disableShowreel = () => {
+    videoRef.current?.pause();
+    setShowreelOpen(false);
+  };
+
   return (
 
     <main>
@@ -34,6 +47,7 @@ const App = () => {
 
       <section id='section-1'>
 
+
         <nav>
           <div className="nav-elem">
             <svg xmlns="http://www.w3.org/2000/svg" fill='white' viewBox="0 0 401.23099 116.838">
@@ -53,17 +67,52 @@ const App = () => {
               <path d="M128.905,30.638h10.41501c-1.21701,4.802-5.74901,7.5074-11.22701,7.5074-7.169,0-11.904-5.2754-11.904-13.8649,0-7.8455,4.32899-13.5944,11.769-13.5944,4.464,0,8.31899,1.8938,9.40099,6.1547h13.59401c-1.48801-10.68614-10.88901-16.8408-23.26601-16.8408-15.758,0-24.95699,9.67161-24.95699,24.2805,0,14.6765,9.46899,24.2805,22.184,24.2805,7.237,0,11.76801-2.7054,14.88-6.5605v5.7489h11.29399V21.3046h-22.183v9.3334Z"></path>
               <path d="M30.4351,61.1758h-10.4155L0,116.838H10.3479L30.4351,61.1758Z"></path>
             </svg>
-
           </div>
 
-          <div className="nav-elem">
-            <i className="ri-arrow-right-s-line" ></i>
-            Our Showreel</div>
-          <div className="nav-elem" >
+          <div className="nav-elem showreel" onClick={enableShowreel}>
+            <i className="ri-arrow-right-s-line"></i>
+            Love Dogs
+          </div>
+
+          <div className={`showreel-container ${showreelOpen ? "" : "display-none-kardo"}`}>
+            <div className="showreel-bg" onClick={disableShowreel}></div>
+            <div className="showreel-content">
+              <h2>We Love Dogs {": )"}</h2>
+              <video ref={videoRef} src="/vids/showreel.mp4" controls></video>
+            </div>
+          </div>
+
+          <input
+            type="checkbox"
+            id="menu-toggle"
+            className="menu-toggle"
+          />
+
+          <label htmlFor="menu-toggle" className="nav-elem menu-button">
             <i className="ri-menu-3-line"></i>
-          </div>
+          </label>
 
+          <label htmlFor="menu-toggle" className="menu-overlay"></label>
+
+          <div className="side-menu">
+            <div className="menu-header">
+              <span>MENU</span>
+            </div>
+
+            <div className="menu-links">
+              <a href="/">Home</a>
+              <a href="/about">About</a>
+              <a href="/projects">Projects </a>
+              <a href="/blogs">Blogs</a>
+            </div>
+
+            <div className="menu-footer">
+              <span>LET'S CONNECT</span>
+              <a href="mailto:hello@example.com">Get in touch ↗</a>
+            </div>
+          </div>
         </nav>
+
 
         <div className='middle'>
           <div className="left">
@@ -157,15 +206,17 @@ const App = () => {
         <div className="bottom">
           <div className="left"></div>
           <div className="right">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, quos iste modi nulla expedita incidunt itaque eligendi aliquam, ab nobis distinctio iusto eum totam cupiditate adipisci nemo! Omnis dolorum totam laborum itaque. Dolores corporis voluptates libero inventore vero iure dolorum nulla. </p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, quos iste modi nulla expedita incidunt itaque eligendi aliquam, ab nobis distinctio iusto eum totam cupiditate adipisci nemo! Omnis dolorum totam laborum itaque. Dolores corporis voluptates libero inventore vero iure dolorum nulla.</p>
+            <p>Dogstudio is a design & technology firm working globally from our offices based in Belgium and Chicago.
+              Our strong focus on producing high quality & emotional brandings, digital products and experiences became a signature. </p>
+
+            <p>We're passionate about moving people and solving problems for the likes of Microsoft, The Museum of Science And Industry Of Chicago, The Kennedy Center of Washington, Dragone, Quanta Magazine, and many more.</p>
           </div>
         </div>
       </section>
 
       <footer>
         <div className="top">
-          
+
           We <br />
           Make <br />
           Good <br />
